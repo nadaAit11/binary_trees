@@ -1,6 +1,11 @@
 # Binary Trees 🌲
 
+<div align="center">
+  <img src="binary_tree_image.png" alt="Binary Trees" width="300"/>
+</div>
+
 ## Table of Contents 📋
+- [Introduction](#introduction)
 - [Description](#Description)
 - [Requirements](#Requirements)
 - [Files](#Files)
@@ -51,6 +56,9 @@
 - [Compilation](#Compilation)
 - [Usage](#Usage)
 - [Author](#AUTHOR)
+
+## Introduction 📝
+Welcome to the Binary Trees project! This repository contains a collection of C programs that implement various binary tree operations. Binary trees are a fundamental data structure in computer science, and this project provides a comprehensive set of functions to work with them.
 
 ## Description 📝
 This repository contains C programs that implement various binary tree operations.
