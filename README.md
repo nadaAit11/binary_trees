@@ -1,7 +1,7 @@
 # Binary Trees 🌲
 
 <div align="center">
-  <img src="binary_tree_image.png" alt="Binary Trees" width="300"/>
+  <img src="circuit-removebg-preview.png" alt="Binary Trees" width="300"/>
 </div>
 
 ## Table of Contents 📋
