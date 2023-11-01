@@ -1,10 +1,10 @@
 # Binary Trees 🌲
 
 ## Table of Contents 📋
-- [Description](#description)
-- [Requirements](#requirements)
-- [Files](#files)
-- [Tasks](#tasks)
+- [Description](#Description)
+- [Requirements](#Requirements)
+- [Files](#Files)
+- [Tasks](#Tasks)
   - [Task 0: New node](#task-0-new-node)
   - [Task 1: Insert left](#task-1-insert-left)
   - [Task 2: Insert right](#task-2-insert-right)
@@ -48,9 +48,9 @@
   - [Task 39: Heap - Extract](#task-39-heap-extract)
   - [Task 40: Heap - Sort](#task-40-heap-sort)
   - [Task 41: Big O Binary Heap](#task-41-big-o-binary-heap)
-- [Compilation](#compilation)
-- [Usage](#usage)
-- [Author](#author)
+- [Compilation](#Compilation)
+- [Usage](#Usage)
+- [Author](#AUTHOR)
 
 ## Description 📝
 This repository contains C programs that implement various binary tree operations.
