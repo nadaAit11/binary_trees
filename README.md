@@ -397,4 +397,4 @@ ou can run the compiled programs as follows:
 
 ## AUTHOR 👤
 - [NEAZYIT](https://github.com/NEAZYIT)
-- [diri smitl](dir link dyal github dyalk)
+- [Nada ait Kidar](https://github.com/nadaAit11)
