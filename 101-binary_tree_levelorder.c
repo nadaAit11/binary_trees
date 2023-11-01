@@ -2,49 +2,70 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/* Function prototypes */
+int height(const binary_tree_t *tree);
+void printGivenLevel(const binary_tree_t *tree, int level, void (*func)(int));
+
 /**
- * binary_tree_levelorder - Perform level-order traversal of a binary tree.
+ * binary_tree_levelorder - Goes through a binary tree using level-order
+ * traversal.
  * @tree: Pointer to the root node of the tree to traverse.
- * @func: Pointer to a function to call for each node. The value in the node
- *         must be passed as a parameter to this function.
- *
- * This function performs a level-order traversal (also known as breadth-first
- * traversal) of a binary tree. It uses a queue to visit each level of the tree
- * from left to right. The queue is implemented as an array of
- * pointers to nodes,
- * with separate indices for the front and rear of the queue.
- *
- * If either 'tree' or 'func' is NULL, the function does nothing.
+ * @func: Pointer to a function to call for each node.
  */
 
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	/* Check for NULL parameters */
+	int h = height(tree);
+	int i;
+
 	if (tree == NULL || func == NULL)
 		return;
 
-	/* Initialize queue and indices */
-	/* Assuming a maximum of 1024 nodes (adjust if needed) */
-	binary_tree_t *queue[1024];
-	int front = 0, rear = 0;
-	binary_tree_t *current;
+	for (i = 1; i <= h; i++)
+		printGivenLevel(tree, i, func);
+}
 
-	/* Enqueue root node */
-	queue[rear++] = (binary_tree_t *)tree;
-
-	/* Process all nodes in the queue */
-	while (front < rear)
+/**
+ * printGivenLevel - Prints nodes at a given level.
+ * @tree: Pointer to the root node of the tree to traverse.
+ * @level: Level at which nodes are to be printed.
+ * @func: Pointer to a function to call for each node.
+ */
+void printGivenLevel(const binary_tree_t *tree, int level, void (*func)(int))
+{
+	if (tree == NULL)
+		return;
+	if (level == 1)
+		func(tree->n);
+	else if (level > 1)
 	{
-		/* Dequeue next node and call function */
-		current = queue[front++];
-		func(current->n);
+		printGivenLevel(tree->left, level - 1, func);
+		printGivenLevel(tree->right, level - 1, func);
+	}
+}
 
-		/* Enqueue left child if present */
-		if (current->left)
-			queue[rear++] = current->left;
+/**
+ * height - Measures the height of a binary tree.
+ * @tree: Pointer to the root node of the tree to measure the height.
+ *
+ * Return: The height of the tree. If tree is NULL, returns 0.
+ */
+int height(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return (0);
 
-		/* Enqueue right child if present */
-		if (current->right)
-			queue[rear++] = current->right;
+	else
+	{
+		int leftHeight = height(tree->left);
+		int rightHeight = height(tree->right);
+
+		if (leftHeight > rightHeight)
+			return (leftHeight + 1);
+
+		else
+		{
+			return (rightHeight + 1);
+		}
 	}
 }
