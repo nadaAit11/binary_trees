@@ -1,7 +1,4 @@
-e	
-
-e	
-nclude "binary_trees.h"
+#include "binary_trees.h"
 
 int is_complete(const binary_tree_t *tree, int index, int total_nodes);
 int count_nodes(const binary_tree_t *tree);
