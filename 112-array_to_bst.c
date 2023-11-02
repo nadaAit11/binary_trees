@@ -1,26 +1,6 @@
 #include "binary_trees.h"
 
 /**
- * bst_free - Frees a Binary Search Tree (BST).
- * @tree: A pointer to the root node of the tree to free.
- */
-
-void bst_free(bst_t *tree)
-{
-	if (tree == NULL)
-	{
-		return;
-	}
-
-	/* Recursively free left and right subtrees */
-	bst_free(tree->left);
-	bst_free(tree->right);
-
-	/* Free root node */
-	free(tree);
-}
-
-/**
  * array_to_bst - Builds a Binary Search Tree (BST) from an array.
  * @array: A pointer to the first element of the array to be converted.
  * @size: The number of elements in the array.
@@ -47,8 +27,8 @@ bst_t *array_to_bst(int *array, size_t size)
 		/* Insert element into BST */
 		if (bst_insert(&root, array[index]) == NULL)
 		{
-			/* If insertion fails, free BST and return NULL */
-			bst_free(root);
+			/* If insertion fails */
+			/* return NULL without freeing the BST */
 			return (NULL);
 		}
 	}
