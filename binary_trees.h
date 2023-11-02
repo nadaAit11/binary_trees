@@ -60,4 +60,6 @@ bst_t *bst_search(const bst_t *tree, int value);
 size_t binary_tree_size(const binary_tree_t *tree);
 size_t binary_tree_leaves(const binary_tree_t *tree);
 size_t binary_tree_nodes(const binary_tree_t *tree);
+bst_t *bst_remove(bst_t *root, int value);
+
 #endif /* BINARY_TREES_H */
