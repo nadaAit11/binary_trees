@@ -99,35 +99,22 @@ int remove_type(bst_t *root)
  */
 bst_t *bst_remove(bst_t *root, int value)
 {
+	int type = 0;
+
 	if (root == NULL)
 		return (NULL);
 	if (value < root->n)
-		root->left = bst_remove(root->left, value);
+		bst_remove(root->left, value);
 	else if (value > root->n)
-		root->right = bst_remove(root->right, value);
-	else
+		bst_remove(root->right, value);
+	else if (value == root->n)
 	{
-		if (root->left == NULL)
-		{
-			bst_t *temp = root->right;
-
-			free(root);
-			return (temp);
-		}
-		else if (root->right == NULL)
-		{
-			bst_t *temp = root->left;
-
-			free(root);
-			return (temp);
-		}
-		bst_t *temp = root->right;
-
-		while (temp->left != NULL)
-			temp = temp->left;
-		root->n = temp->n;
-		root->right = bst_remove(root->right, temp->n);
+		type = remove_type(root);
+		if (type != 0)
+			bst_remove(root->right, type);
 	}
+	else
+		return (NULL);
 	return (root);
 }
 
