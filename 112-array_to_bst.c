@@ -6,6 +6,12 @@
  * @size: The number of elements in @array.
  *
  * Return: A pointer to the root node of the created BST, or NULL upon failure.
+ *
+ * Description:
+ * This function constructs a binary search tree (BST) from an array of
+ * integers.
+ * If a value is already present in the tree, it will be ignored.
+ * It iterates through each element in the array.
  */
 
 bst_t *array_to_bst(int *array, size_t size)
